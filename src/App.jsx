@@ -1,7 +1,7 @@
 // import './App.css';
 
 const title = 'Our JSX Bascics Lessons';
-const userIsOnline = false;
+const userIsOnline = true;
 
 export const App = () => {
   return (
@@ -22,6 +22,9 @@ export const App = () => {
       <hr />
       {/* Vite doesn't display the info after && in JS file created from npm run build, when userIsOnline = false;*/}
       {userIsOnline && <p>password:86743187234</p>}
+
+      {/* <div style={userIsOnline ? { color: 'green' } : { color: 'gray' }}> */}
+      <div style={userIsOnline && { color: `green` }}>information</div>
     </div>
   );
 };
