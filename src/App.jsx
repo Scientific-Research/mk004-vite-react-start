@@ -44,13 +44,20 @@ export const App = () => {
 
       <hr />
 
+      <h2>There are {books.length} books!</h2>
+      {/* Only books with title: Linux */}
       <div className="books">
-        {books.map((b) => (
-          <div className="book">
-            <p className="title">{b.title}</p>
-            <p className="description">{b.description}</p>
-          </div>
-        ))}
+        {
+          books
+            .filter((b) => b.title.includes('Linux'))
+            .map((b, index) => (
+              <div className="book" key={index}>
+                <p className="title">{b.title}</p>
+                <p className="description">{b.description}</p>
+              </div>
+            ))
+          // .filter((b) => b.title.includes('Linux'))}
+        }
       </div>
     </div>
   );
