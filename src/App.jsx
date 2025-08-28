@@ -23,8 +23,13 @@ export const App = () => {
       {/* Vite doesn't display the info after && in JS file created from npm run build, when userIsOnline = false;*/}
       {userIsOnline && <p>password:86743187234</p>}
 
-      {/* <div style={userIsOnline ? { color: 'green' } : { color: 'gray' }}> */}
-      <div style={userIsOnline && { color: `green` }}>information</div>
+      {/* Inline-Style with ternary Operator */}
+      <div style={userIsOnline ? { color: 'green' } : { color: 'red' }}>
+        Information
+      </div>
+
+      {/* Inline-Style with && operator */}
+      {/* <div style={userIsOnline && { color: `green` }}>information</div> */}
     </div>
   );
 };
