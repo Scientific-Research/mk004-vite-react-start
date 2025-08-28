@@ -1,4 +1,5 @@
 // import './App.css';
+import books from './dev/books.json';
 
 const title = 'Our JSX Bascics Lessons';
 const userIsOnline = true;
@@ -40,6 +41,17 @@ export const App = () => {
 
       {/* Inline-Style with && operator */}
       {/* <div style={userIsOnline && { color: `green` }}>information</div> */}
+
+      <hr />
+
+      <div className="books">
+        {books.map((b) => (
+          <div className="book">
+            <p className="title">{b.title}</p>
+            <p className="description">{b.description}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
