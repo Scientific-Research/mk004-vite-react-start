@@ -1,7 +1,7 @@
 // import './App.css';
 
 const title = 'Our JSX Bascics Lessons';
-const userIsOnline = true;
+const userIsOnline = false;
 
 export const App = () => {
   return (
@@ -18,6 +18,10 @@ export const App = () => {
       ) : (
         <p>user needs to login</p>
       )}
+
+      <hr />
+      {/* Vite doesn't display the info after && in JS file created from npm run build, when userIsOnline = false;*/}
+      {userIsOnline && <p>password:86743187234</p>}
     </div>
   );
 };
