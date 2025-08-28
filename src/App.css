@@ -22,4 +22,16 @@ body {
   hr {
     margin: 0.5rem 0;
   }
+
+  .fileExists {
+    color: green;
+    font-size: 1.5rem;
+    background-color: aqua;
+  }
+
+  .fileIsDeleted {
+    color: red;
+    background-color: yellow;
+    font-weight: bold;
+  }
 }
