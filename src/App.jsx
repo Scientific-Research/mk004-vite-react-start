@@ -15,6 +15,10 @@ export const App = () => {
     console.log('Button was clicked!');
   };
 
+  const handleInput = (e) => {
+    console.log(e.target.value);
+  };
+
   return (
     <div className="App">
       <h1>Welcome to React-Vite-Javascript</h1>
@@ -22,7 +26,7 @@ export const App = () => {
       <div>
         <p>
           Password:
-          <input type="text" />
+          <input type="text" onChange={handleInput} />
           <button onClick={handleButton}>Login</button>
         </p>
       </div>
