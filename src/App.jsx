@@ -12,14 +12,16 @@ export const App = () => {
   const [userIsOnline, setUserIsOnline] = useState(false);
   const [thePassword, setThePassword] = useState('');
 
-  const handleButton = () => {
+  const handleLogin = (e) => {
+    e.preventDefault(); // To prevent the page from blinking when i click on the login button
     console.log('Button was clicked!');
+
     if (thePassword === password) {
       setUserIsOnline(true);
     }
   };
 
-  const handleInput = (e) => {
+  const handlePasswordField = (e) => {
     console.log(e.target.value);
     setThePassword(e.target.value);
   };
@@ -30,13 +32,20 @@ export const App = () => {
     <div className="App">
       <h1>Welcome to React-Vite-Javascript</h1>
 
-      <div>
+      {/* First Solution */}
+      {/* <div>
         <p>
           Password:
-          <input type="text" onChange={handleInput} />
-          <button onClick={handleButton}>Login</button>
+          <input type="text" onChange={handlePasswordField} />
+          <button onClick={handleLogin}>Login</button>
         </p>
-      </div>
+      </div> */}
+
+      {/* Second Solution using Form*/}
+      <form action="">
+        Password: <input type="text" onChange={handlePasswordField}></input>{' '}
+        <button onClick={handleLogin}>Login</button>
+      </form>
 
       {/* strange if statement (hack) */}
       {userIsOnline && <p>user is online</p>}
