@@ -3,21 +3,28 @@ import React, { useState } from 'react';
 import books from './dev/books.json';
 
 const title = 'Our JSX Bascics Lessons';
-const userIsOnline = true;
+// const userIsOnline = true;
 
 // const fileStatus = 'fileExists';
 const fileStatus = 'fileIsDeleted';
 
 export const App = () => {
-  // [userIsOnline, setUserIsOnline] = useState('false');
+  const [userIsOnline, setUserIsOnline] = useState(false);
+  const [thePassword, setThePassword] = useState('');
 
   const handleButton = () => {
     console.log('Button was clicked!');
+    if (thePassword === password) {
+      setUserIsOnline(true);
+    }
   };
 
   const handleInput = (e) => {
     console.log(e.target.value);
+    setThePassword(e.target.value);
   };
+
+  const password = '123456';
 
   return (
     <div className="App">
