@@ -1,4 +1,5 @@
 // import './App.css';
+import React from 'react';
 import books from './dev/books.json';
 
 const title = 'Our JSX Bascics Lessons';
@@ -51,10 +52,13 @@ export const App = () => {
           books
             .filter((b) => b.title.includes('Linux'))
             .map((b, index) => (
-              <div className="book" key={index}>
-                <p className="title">{b.title}</p>
-                <p className="description">{b.description}</p>
-              </div>
+              <React.Fragment key={index}>
+                <div className="book">
+                  <p className="title">{b.title}</p>
+                  <p className="description">{b.description}</p>
+                </div>
+                <div></div>
+              </React.Fragment>
             ))
           // .filter((b) => b.title.includes('Linux'))}
         }
